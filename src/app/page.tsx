@@ -8,8 +8,11 @@ export default function Homepage() {
     <div className="flex flex-col min-h-screen bg-gray-50">
       <header className="w-full py-4 px-4 sm:px-6 lg:px-8 bg-white shadow-sm">
         <div className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-gray-900">
-            TechEd Bootcamps
+          <Link
+            href="/"
+            className="text-4xl font-spaceGrotesk  font-bold text-gray-900"
+          >
+            Edulate
           </Link>
           <nav className="hidden md:flex space-x-4">
             <Link href="#about" className="text-gray-600 hover:text-gray-900">
