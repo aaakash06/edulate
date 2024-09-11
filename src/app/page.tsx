@@ -2,18 +2,28 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Code, Brain, School, Users } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Homepage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-gray-50 font-poppins">
       <header className="w-full py-4 px-4 sm:px-6 lg:px-8 bg-white shadow-sm">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link
+        <div className="container mx-auto flex justify-between items-center font-poppins text-lg">
+          {/* <Link
             href="/"
             className="text-4xl font-spaceGrotesk  font-bold text-gray-900"
           >
             Edulate
-          </Link>
+          </Link> */}
+          <div className="relative w-40 h-[10rem] ">
+            <Image
+              alt="logo"
+              className="invert object-cover"
+              src={"/logo/edulate.png"}
+              fill
+            ></Image>
+          </div>
+
           <nav className="hidden md:flex space-x-4">
             <Link href="#about" className="text-gray-600 hover:text-gray-900">
               About
@@ -41,10 +51,10 @@ export default function Homepage() {
       <main className="flex-grow">
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
           <div className="container mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 font-spaceGrotesk">
               Empower Your Students with Tech Skills
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl  text-gray-600 mb-8 max-w-2xl mx-auto">
               We bring cutting-edge Web Development and Machine Learning
               bootcamps directly to schools, preparing students for the future
               of technology.
@@ -55,7 +65,7 @@ export default function Homepage() {
 
         <section id="bootcamps" className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-spaceGrotesk font-extrabold text-gray-900 mb-8 text-center">
               Our Bootcamps
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -92,7 +102,7 @@ export default function Homepage() {
           className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100"
         >
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-spaceGrotesk font-extrabold text-gray-900 mb-8 text-center">
               Benefits
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -127,7 +137,7 @@ export default function Homepage() {
 
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-spaceGrotesk font-extrabold text-gray-900 mb-8 text-center">
               What Schools Say
             </h2>
             <blockquote className="text-xl italic text-gray-600 text-center max-w-3xl mx-auto">
@@ -143,7 +153,7 @@ export default function Homepage() {
 
         <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-50">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-spaceGrotesk font-extrabold  text-gray-900 mb-4">
               Ready to bring tech education to your school?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
