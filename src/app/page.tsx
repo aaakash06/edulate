@@ -1,184 +1,268 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Code, Brain, School, Users } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { Video, Users, Calendar, Star, VideoIcon } from "lucide-react";
+import Hero from "@/components/custom/Hero";
+import { section } from "framer-motion/client";
 
-export default function Homepage() {
+export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50 font-poppins">
-      <header className="w-full py-4 px-4 sm:px-6 lg:px-8 bg-white shadow-sm">
-        <div className="container mx-auto flex justify-between items-center font-poppins text-lg">
-          {/* <Link
-            href="/"
-            className="text-4xl font-spaceGrotesk  font-bold text-gray-900"
+    // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="flex flex-col min-h-screen w-full bg-gray-50">
+      <div className=" min-h-screen  bg-gray-100 font-poppins  ">
+        <header className="w-full  py-4 px-4 sm:px-6 lg:px-8 bg-white shadow-sm">
+          <div className="container mx-auto flex justify-between items-center  font-poppins text-lg">
+            <Link className="flex items-center  flex-1  " href="/">
+              <VideoIcon className=" w-6 h-6 text-blue-600" />
+              <span className="ml-2 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% max-sm:text-lg">
+                GuidanceConnect
+              </span>
+            </Link>
+
+            <nav className="hidden lg:flex justify-center   space-x-4 ">
+              <Link href="#about" className="text-gray-600 hover:text-gray-900">
+                About
+              </Link>
+              <Link
+                href="#bootcamps"
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Bootcamps
+              </Link>
+              <Link
+                href="#benefits"
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Benefits
+              </Link>
+              <Link
+                href="#contact"
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Contact
+              </Link>
+            </nav>
+            <div className="space-x-4 flex-1 text-right">
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500  max-sm:text-xs ">
+                Login
+              </Button>
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 max-sm:text-xs">
+                Register
+              </Button>
+            </div>
+          </div>
+        </header>
+
+        <main className="">
+          <section className=" lg:h-screen flex justify-center relative  ">
+            <Hero></Hero>
+            {/* <Image
+              className="absolute bottom-20  hidden xl:block -z-5 animate-flyDiagonal  left-0 "
+              src={"/images/rocket.png"}
+              height={80}
+              width={80}
+              alt={""}
+            ></Image> */}
+          </section>
+
+          <section className="w-full z-10  relative lg:h-screen py-12  md:py-24  lg:py-32 xl:py-48 flex justify-center ">
+            <div className="container z-10 lg:mt-[10rem] px-4 md:px-6">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <h1 className="text-3xl text-black font-bold tracking-tighter sm:text-4xl  md:text-5xl lg:text-6xl/none font-spaceGrotesk">
+                    Connect with Experienced Mentors
+                  </h1>
+                  <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl">
+                    GuidanceConnect helps students and guidance seekers connect
+                    with domain experts and seniors.
+                  </p>
+                </div>
+                <div className="w-full max-w-sm space-y-2">
+                  <form className="flex space-x-2">
+                    <Input
+                      className="max-w-lg flex-1 text-black"
+                      placeholder="Enter your email"
+                      type="email"
+                    />
+                    <Button type="submit">Get Started</Button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            className="w-full py-12 flex justify-center md:py-24 lg:py-32 bg-white"
+            id="features"
           >
-            Edulate
-          </Link> */}
-          <div className="relative w-40 h-[10rem] ">
-            <Image
-              alt="logo"
-              className="invert object-cover"
-              src={"/logo/edulate.png"}
-              fill
-            ></Image>
-          </div>
-
-          <nav className="hidden md:flex space-x-4">
-            <Link href="#about" className="text-gray-600 hover:text-gray-900">
-              About
-            </Link>
-            <Link
-              href="#bootcamps"
-              className="text-gray-600 hover:text-gray-900"
-            >
-              Bootcamps
-            </Link>
-            <Link
-              href="#benefits"
-              className="text-gray-600 hover:text-gray-900"
-            >
-              Benefits
-            </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-gray-900">
-              Contact
-            </Link>
-          </nav>
-          <Button>Get Started</Button>
-        </div>
-      </header>
-
-      <main className="flex-grow">
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-white">
-          <div className="container mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 font-spaceGrotesk">
-              Empower Your Students with Tech Skills
-            </h1>
-            <p className="text-xl  text-gray-600 mb-8 max-w-2xl mx-auto">
-              We bring cutting-edge Web Development and Machine Learning
-              bootcamps directly to schools, preparing students for the future
-              of technology.
-            </p>
-            <Button size="lg">Learn More</Button>
-          </div>
-        </section>
-
-        <section id="bootcamps" className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-spaceGrotesk font-extrabold text-gray-900 mb-8 text-center">
-              Our Bootcamps
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardContent className="p-6">
-                  <Code className="w-12 h-12 text-blue-500 mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">
-                    Web Development Bootcamp
-                  </h3>
-                  <p className="text-gray-600">
-                    Learn HTML, CSS, JavaScript, and modern frameworks to build
-                    responsive and dynamic websites.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <Brain className="w-12 h-12 text-purple-500 mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">
-                    Machine Learning Bootcamp
-                  </h3>
-                  <p className="text-gray-600">
-                    Dive into data science, Python, and machine learning
-                    algorithms to solve real-world problems.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="benefits"
-          className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100"
-        >
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-spaceGrotesk font-extrabold text-gray-900 mb-8 text-center">
-              Benefits
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex flex-col items-center text-center">
-                <School className="w-12 h-12 text-green-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">For Schools</h3>
-                <p className="text-gray-600">
-                  Enhance your curriculum with industry-relevant tech education.
-                </p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <Users className="w-12 h-12 text-yellow-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">For Students</h3>
-                <p className="text-gray-600">
-                  Gain practical skills and prepare for high-demand tech
-                  careers.
-                </p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <BookOpen className="w-12 h-12 text-red-500 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">
-                  Hands-on Learning
-                </h3>
-                <p className="text-gray-600">
-                  Work on real projects and build a portfolio during the
-                  bootcamp.
-                </p>
+            <div className="container px-4 md:px-6">
+              <h2 className="text-3xl text-black font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
+                Why Choose GuidanceConnect?
+              </h2>
+              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                <Card>
+                  <CardContent className="flex flex-col items-center space-y-2 p-6">
+                    <Video className="h-12 w-12 text-blue-600" />
+                    <h3 className="text-xl font-bold">Video Consultations</h3>
+                    <p className="text-gray-600 text-center">
+                      Connect face-to-face with mentors from around the world.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex flex-col items-center space-y-2 p-6">
+                    <Users className="h-12 w-12 text-blue-600" />
+                    <h3 className="text-xl font-bold">Expert Mentors</h3>
+                    <p className="text-gray-600 text-center">
+                      Access a diverse pool of experienced professionals and
+                      seniors.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex flex-col items-center space-y-2 p-6">
+                    <Calendar className="h-12 w-12 text-blue-600" />
+                    <h3 className="text-xl font-bold">Flexible Scheduling</h3>
+                    <p className="text-gray-600 text-center">
+                      Book sessions at times that suit your schedule.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto">
-            <h2 className="text-3xl font-spaceGrotesk font-extrabold text-gray-900 mb-8 text-center">
-              What Schools Say
-            </h2>
-            <blockquote className="text-xl italic text-gray-600 text-center max-w-3xl mx-auto">
-              "TechEd Bootcamps has transformed our computer science program.
-              Our students are now building impressive projects and landing
-              internships at top tech companies."
-              <footer className="mt-4 text-gray-500">
-                - Sarah Johnson, Principal at Tech High School
-              </footer>
-            </blockquote>
-          </div>
-        </section>
+          <section
+            className="w-full flexx py-12 md:py-24 lg:py-32 bg-gray-100"
+            id="how-it-works"
+          >
+            <div className="container  px-4 md:px-6">
+              <h2 className="text-3xl text-black font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">
+                How It Works
+              </h2>
+              <div className="grid gap-6 lg:grid-cols-3">
+                <div className="flex flex-col items-center space-y-2 border-2 border-gray-200 rounded-lg p-6 bg-white">
+                  <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold">
+                    1
+                  </div>
+                  <h3 className="text-xl font-bold text-black">Sign Up</h3>
+                  <p className="text-gray-600 text-center">
+                    Create your account and tell us about your goals.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 border-2 border-gray-200 rounded-lg p-6 bg-white">
+                  <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold">
+                    2
+                  </div>
+                  <h3 className="text-xl font-bold text-black">
+                    Match with Mentors
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    We'll connect you with the best mentors for your needs.
+                  </p>
+                </div>
+                <div className="flex flex-col items-center space-y-2 border-2 border-gray-200 rounded-lg p-6 bg-white">
+                  <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold">
+                    3
+                  </div>
+                  <h3 className="text-xl font-bold text-black">
+                    Start Learning
+                  </h3>
+                  <p className="text-gray-600 text-center">
+                    Schedule video calls and get personalized guidance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
 
-        <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-blue-50">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-spaceGrotesk font-extrabold  text-gray-900 mb-4">
-              Ready to bring tech education to your school?
-            </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Contact us today to learn more about our bootcamp programs.
-            </p>
-            <Button size="lg">Get in Touch</Button>
-          </div>
-        </section>
-      </main>
+          <section
+            className="w-full hidden py-12  md:py-24 lg:py-32 bg-white"
+            id="testimonials"
+          >
+            <div className="container px-4 md:px-6">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-black">
+                What Our Users Say
+              </h2>
+              <div className="grid gap-8 lg:grid-cols-2">
+                <Card>
+                  <CardContent className="flex flex-col space-y-2 p-6">
+                    <Star className="h-6 w-6 text-yellow-500" />
+                    <p className="text-gray-600">
+                      "GuidanceConnect helped me find the perfect mentor for my
+                      career transition. The video calls were incredibly
+                      insightful!"
+                    </p>
+                    <p className="font-semibold">- Sarah T., Career Changer</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="flex flex-col space-y-2 p-6">
+                    <Star className="h-6 w-6 text-yellow-500" />
+                    <p className="text-gray-600">
+                      "As a senior professional, I love being able to give back
+                      and guide the next generation through GuidanceConnect."
+                    </p>
+                    <p className="font-semibold">- Mark R., Mentor</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
 
-      <footer className="w-full py-6 px-4 sm:px-6 lg:px-8 bg-gray-800 text-white">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm">
-            &copy; 2023 TechEd Bootcamps. All rights reserved.
-          </div>
-          <nav className="flex space-x-4 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-gray-300">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-gray-300">
+          <section className="w-full flexx py-12 md:py-24 lg:py-32 bg-blue-600">
+            <div className="container px-4 md:px-6">
+              <div className="flex flex-col items-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
+                    Ready to Connect?
+                  </h2>
+                  <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl">
+                    Join GuidanceConnect today and take the first step towards
+                    your goals.
+                  </p>
+                </div>
+                <div className="w-full max-w-sm space-y-2">
+                  <form className="flex space-x-2">
+                    <Input
+                      className="max-w-lg flex-1 bg-white"
+                      placeholder="Enter your email"
+                      type="email"
+                    />
+                    <Button
+                      type="submit"
+                      className="bg-white text-blue-600 hover:bg-gray-100"
+                    >
+                      Get Started
+                    </Button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <footer className="flex text-black  mt-3 flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6  border-t">
+          <p className="text-md text-gray-500">
+            © 2023 GuidanceConnect. All rights reserved.
+          </p>
+          <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+            <Link
+              className="text-sm  hover:underline underline-offset-4"
+              href="#"
+            >
               Terms of Service
             </Link>
+            <Link
+              className="text-sm hover:underline underline-offset-4"
+              href="#"
+            >
+              Privacy
+            </Link>
           </nav>
-        </div>
-      </footer>
+        </footer>
+      </div>
+      //{" "}
     </div>
   );
 }
